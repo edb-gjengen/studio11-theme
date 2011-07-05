@@ -62,3 +62,33 @@ class Artist_Widget extends WP_Widget {
 
 register_widget('Program_Widget'); 
 register_widget('Artist_Widget'); 
+
+function get_related_artists( $post_id) 
+{
+	$related = get_posts( array(
+				'connected_from' => $post_id,
+				'nopaging' => true,
+				'post_type' => 'artist',
+				'suppress_filters' => false
+			));
+	
+	if ( empty( $related ))
+		return array();
+	
+	return $related;
+}
+
+function get_related_events( $post_id) 
+{
+	$related = get_posts( array(
+				'connected_to' => $post_id,
+				'nopaging' => true,
+				'post_type' => 'event',
+				'suppress_filters' => false
+			));
+	
+	if ( empty( $related ))
+		return array();
+	
+	return $related;
+}
