@@ -1385,5 +1385,31 @@ code {
 #studiotwitter ul
 {
 	margin:0px !important;
+	list-style:none !important;
 }
 
+.artist-list
+{
+	margin:0px;
+}
+
+.artist-list li a
+{
+	display:block;
+}
+
+.artist-list li img
+{
+	margin-right:5px;
+}
+
+
+body {
+	color: #646567;		
+	webkit-transition-property: color, background; 
+	-webkit-transition-duration: 1s, 1s; 
+	-webkit-transition-timing-function: linear, ease-in;
+	width: auto;
+	height: auto;
+		
+}
