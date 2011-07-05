@@ -52,16 +52,8 @@
 ?>
 </head>
 
-<body <?php body_class(); ?> onload="randomBackground()">
-<script type="text/javascript"> 
- 
-function randomBackground() {
-var bgcolorlist=new Array("#2aa445", "#f6a61c", "#646567", "#ce2083")
- 
-document.body.style.background=bgcolorlist[Math.floor(Math.random()*bgcolorlist.length)]
-}
-</script> 
-<div id="header" style="">
+<body <?php body_class(); ?>>
+<div id="header">
 		<div id="masthead">
 			<div id="branding" role="banner">
 				<?php $heading_tag = ( is_home() || is_front_page() ) ? 'h1' : 'div'; ?>
@@ -74,31 +66,16 @@ document.body.style.background=bgcolorlist[Math.floor(Math.random()*bgcolorlist.
 						
 						</a>
 					</span>
-				<!--</<?php echo $heading_tag; ?>>
-				<div id="site-description"><?php bloginfo( 'description' ); ?></div>-->
-
-				<?php
-					// Check if this is a post or page, if it has a thumbnail, and if it's a big one
-					if ( is_singular() && current_theme_supports( 'post-thumbnails' ) &&
-							has_post_thumbnail( $post->ID ) &&
-							( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
-							$image[1] >= HEADER_IMAGE_WIDTH ) :
-						// Houston, we have a new header image!
-						echo get_the_post_thumbnail( $post->ID );
-					/*elseif ( get_header_image() ) : ?>
-						<img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />
-					<?php*/ endif; ?>
+				</<?php echo $heading_tag; ?>
 			</div><!-- #branding -->
 
 			<div id="access" role="navigation">
 			  <?php /*  Allow screen readers / text browsers to skip the navigation menu and get right to the good stuff */ ?>
 				<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'twentyten' ); ?>"><?php _e( 'Skip to content', 'twentyten' ); ?></a></div>
-				<?php /* Our navigation menu.  If one isn't filled out, wp_nav_menu falls back to wp_page_menu.  The menu assiged to the primary position is the one used.  If none is assigned, the menu with the lowest ID is used.  */ ?>
 				<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
 			</div><!-- #access -->
 		</div><!-- #masthead -->
-	</div><!-- #header -->
+		</div><!-- #header -->
+</div><!-- skjønner ikke hvorfor denne trengs -->
 <div id="wrapper" class="hfeed">
-	
-
 	<div id="main">

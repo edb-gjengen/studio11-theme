@@ -3,14 +3,23 @@
 function studio11_widgets_init() {
 	// Area 1, located at the top of the sidebar.
 	register_sidebar( array(
-		'name' => __( 'Left side widget area', 'Studio11' ),
-		'id' => 'left-primary-widget-area',
-		'description' => __( 'The primary left widget area', 'twentyten' ),
+		'name' => __( 'Left column', 'Studio11' ),
+		'id' => 'left-column',
+		'description' => __( 'The left column in the layout', 'studio11' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
+	
+	register_sidebar( array(
+		'name' => __( 'Right column', 'studio11'),
+		'id'=>'right-column',
+		'description' => __( 'The right column in the layout', 'studio11' ),
+		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',));
 
 }
 /** Register sidebars by running twentyten_widgets_init() on the widgets_init hook. */
@@ -92,3 +101,65 @@ function get_related_events( $post_id)
 	
 	return $related;
 }
+
+function artist_content_events( $content )
+{
+	global $post;
+	if(is_single())
+	{
+	
+		if($post->post_type == 'artist')
+		{
+			$events = get_related_events($post->ID);
+		
+			$content .= '<ul class="artist-list">';
+		
+			foreach($events as $event)
+			{
+				$content .=  '<li>';
+				$content .=  '<a href="' . get_permalink( $event->ID ) . '">';
+				$content .=  get_the_post_thumbnail($event->ID, array(32,32), array('style'=>'float:left;')); 
+				$content .=  '<span class="event_title">' . $event->post_title . '</span>';
+				$content .=  '</a>';
+				$content .=  '</li>';
+			}
+		
+			$content .=  '</ul>';
+		}
+		else if($post->post_type == 'event')
+		{
+			$artists = get_related_artists($post->ID);
+
+			$content .=   '<ul class="artist-list">';
+			foreach($artists as $artist)
+			{
+				$content .= '<li>';
+				$content .= '<a href="' . get_permalink( $artist->ID ) . '">';
+				$content .= get_the_post_thumbnail($artist->ID, array(32,32), array('style'=>'float:left;')); 
+				$content .= '<span class="event_title">' . $artist->post_title . '</span>';
+				$content .= '</a>';
+				$content .= '</li>';
+			}
+			$content .= '</ul>';
+		}
+	}
+	return $content;
+}
+
+if(function_exists('get_related_events'))
+	add_filter( 'the_content', 'artist_content_events' );
+/*
+function thumbnail_in_header($title)
+{
+	global $post;
+
+	if ( is_single() && 
+			current_theme_supports( 'post-thumbnails' ) &&
+							has_post_thumbnail( $post->ID ) &&
+							($image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
+							$image[1] >= 550 ) 
+						$title = '<img src="'. get_the_post_thumbnail( $post->ID ) . '" />' . $title;
+	return $title;
+}
+
+add_filter('the_title', 'thumbnail_in_header');*/
