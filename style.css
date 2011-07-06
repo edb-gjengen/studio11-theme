@@ -166,13 +166,13 @@ div.menu,
 #branding,
 #main,
 #wrapper {
-	margin: 0 auto;
-	width: 940px;
+	/*margin: 0 auto;
+	width: 940px;*/
 }
 #wrapper {
 	background: #fff;
-	margin-top: 20px;
-	padding: 0 20px;
+	/*margin-top: 20px
+	padding: 0 20px;*/
 }
 
 /* Structure the footer area */
@@ -316,7 +316,7 @@ textarea {
 	padding: 2px;
 }
 a:link {
-	color: #0066cc;
+	color: pink;
 }
 a:visited {
 	color: #743399;
@@ -465,7 +465,7 @@ div.menu li {
 #content input,
 #content textarea {
 	color: #333;
-	font-size: 16px;
+	font-size: 13px;
 	line-height: 24px;
 }
 #content p,
@@ -528,7 +528,8 @@ div.menu li {
 	background: #f2f7fc;
 }
 .hentry {
-	margin: 0 0 48px 0;
+	/*margin: 0 0 48px 0;*/
+	margin:20px;
 }
 .home .sticky {
 	background: #f2f7fc;
@@ -578,7 +579,7 @@ div.menu li {
 	color: #ff4b33;
 }
 .entry-meta {
-	color: #888;
+	color: black;
 	font-size: 12px;
 }
 .entry-meta abbr,
@@ -702,7 +703,7 @@ body.page .edit-link {
 }
 .entry-meta a,
 .entry-utility a {
-	color: #888;
+	color: black/* #888;*/;
 }
 .entry-meta a:hover,
 .entry-utility a:hover {
@@ -1430,16 +1431,21 @@ body {
 	/*webkit-transition-property: color, background; 
 	-webkit-transition-duration: 1s, 1s; 
 	-webkit-transition-timing-function: linear, ease-in;*/
-	background: url('/oyvinbak/studio11/wp-content/themes/studio11/bg.png');
+	background: fixed url('/oyvinbak/studio11/wp-content/themes/studio11/img/bakgrunn.png') no-repeat;
 	width: auto;
 	height: auto;
-		
+	font-family:courier;
 }
-
+#main
+{
+	width:1020px;
+}
 #wrapper
 {
 	background-color:transparent;
-	width:900px;
+	width:1020px;
+	margin-top:0px;
+	padding-top:0px;
 }
 /*
 .home #content
@@ -1458,7 +1464,7 @@ body {
 #left-column
 {
 	float:left;
-	width:150px;
+	width:200px;
 	position:absolute;
 }
 
@@ -1475,8 +1481,6 @@ body {
 
 #left-column > ul > li, #right-column > ul > li
 {
-	background-color:white
-	padding:5px;
 	list-style:none !important;
 	margin:0px;
 	margin-bottom:20px;
@@ -1487,13 +1491,22 @@ body {
 	padding:10px;
 }
 
+#left-column .widget_text
+{
+	padding:0px;
+	/*margin:-10px;
+	margin-bottom:60px;*/
+}
+
+
 #left-column li, #right-column li
 {
 	list-style:none !important;
 }
 .widget_artist_widget
 {
-	background-color:rgba(217, 92, 168,0.9);
+	background-color:#c32083;
+	background-color:rgba(195, 32, 131,0.9);
 }
 
 .home .entry-image
@@ -1504,7 +1517,7 @@ body {
 
 .home .therest .hentry
 {
-	width:270px;
+	width:230px;
 	float:left;
 	display:block;
 }
@@ -1516,58 +1529,75 @@ body {
 	text-decoration:none;
 }
 
-.widget_nav_menu
+
+
+#right-menu
 {
 	position:fixed;
-	background-color:rgba(251,182,89,0.9);
+	background-color:#fba61c;
+	background-color:rgba(251,166,28,0.9);
+	padding:5px;
 }
 
-.widget_nav_menu
+.current-menu-item a
+{
+	
+	color:white;
+}
+
+#right-menu
 {
 	text-align:center;
+	width:200px !important;
 }
 
-.widget_nav_menu a
+#right-menu a
 {
 	color:gray;
 	font-weight:bolder;
 	font-size:150%;
 	text-decoration:none;
 }
-
-.widget_text
+#fb-all
 {
-	background-color:rgba(128,128,128,0.7);
+	padding:5px;
+	background-color:#bababa;
 }
 
 #right-column
 {
 	float:left;
-	width:150px;
-	margin-left:25px;
+	width:200px;
+	margin-left:20px;
 }
 
 .widget-container
 {
-	-moz-box-shadow: 0px -3px 6px rgba(0,0,0,0.35);
+	/*-moz-box-shadow: 0px -3px 6px rgba(0,0,0,0.35);
 	-webkit-box-shadow: 3px -3px 6px rgba(0,0,0,0.35);
-	box-shadow: 0px -3px 6px rgba(0,0,0,0.35);
+	box-shadow: 0px -3px 6px rgba(0,0,0,0.35);*/
 }
 
 #container
 {
-	-moz-box-shadow: 0px -3px 6px rgba(0,0,0,0.75);
+	/*-moz-box-shadow: 0px -3px 6px rgba(0,0,0,0.75);
 	-webkit-box-shadow: 3px -3px 6px rgba(0,0,0,0.75);
-	box-shadow: 0px -3px 6px rgba(0,0,0,0.75);
+	box-shadow: 0px -3px 6px rgba(0,0,0,0.75);*/
 }
 #container
 {
 	width: 550px;
-	margin-left:175px !important;
-	background-color:rgba(66,193,122,0.95);
+	margin-left:220px !important;
+	background-color:#12b259;
+	background-color:rgba(18,178,89,0.8);
 	padding:15px;
 	overflow:hidden;
 	
+}
+
+.twtr-widget h3,.twtr-widget h4
+{
+	clear:none;
 }
 
 #float_stopper
@@ -1575,9 +1605,17 @@ body {
 	clear:left;
 }
 
+.twtr-doc
+{
+	-moz-border-radius:0px !important;
+	-webkit-border-radius:0px !important;
+	border-radius:0px !important;
+}
+
 #main
 {
 	margin-bottom:20px;
+	padding-top:0px;
 }
 #access
 {
@@ -1594,6 +1632,19 @@ body {
 	font-weight:bold;
 }
 
+#header
+{
+	height:200px;
+	margin:0px;
+	padding:0px !important;
+	margin-left:220px;
+}
+
+#header img
+{
+	border:0px;
+}
+/*
 @media (max-width: 940px){
 	.menu-header 
 	{
@@ -1625,4 +1676,4 @@ body {
 		width:580px !important;
 		margin: auto !important;
 	}
-}
+}*/

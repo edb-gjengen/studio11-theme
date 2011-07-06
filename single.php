@@ -6,7 +6,9 @@
  * @subpackage Twenty_Ten
  * @since Twenty Ten 1.0
  */
-
+echo '<pre style="background-color:white;">';
+var_dump($_SERVER,$_POST, $_GET);
+die;
 get_header(); ?>
 
 		<div id="container">
