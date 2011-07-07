@@ -31,7 +31,7 @@ $wp_query->is_archive = true;
 			 ?>
 			 
 			 <div id="post-<?php the_ID(); ?>" <?php post_class('first'); ?>>
-			 <a rel="shadowbox" href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
+			 <a rel="shadowbox" href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" class="lightbox">
 			 
 				 <div class="entry-image">
 					<?php echo get_the_post_thumbnail( $post->ID, array(550,550) ) ?>

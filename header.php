@@ -35,6 +35,9 @@
 	?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/studio.css" />
+<script type="text/javascript" src="<?php bloginfo( 'stylesheet_directory' ); ?>/scripts/jquery.lightbox-0.5.pack.js"></script>
+
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php
 	/* We add some JavaScript to pages with the comment form
@@ -70,12 +73,12 @@
 						<img style="position:absolute;left:150px;bottom:0px;" width="50"  src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/Ugla.png" alt="STUDiO11" />
 						<img style="position:absolute;left:0px;bottom:0px;" width="75"  src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/Kua.png" alt="STUDiO11" />
 					
-						<div id="countdown" style="position:absolute;top:-20px;right:0px;">Bare 52 dager igjen!</div>
+						<div id="countdown" style="position:absolute;top:10px;left:400px;color:#C32083;">Bare <?php echo ceil((strtotime('2011-08-15') - time()) / 60 / 60 / 24) ?> dager igjen!</div>
 						
-						<img style="position:absolute;left:460px;bottom:-5px;" height="200"  src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/bjornenmskilt.png" alt="STUDiO11" usemap="#blifrivillig" />
-						<map id="blifrivillig" name="blifrivillig">
-<area shape="poly" coords="1,193,5,123,24,65,68,68,54,87,67,121,85,70,42,51,66,1,149,27,129,84,92,72,69,131,84,167,74,198,"  href="/blifrivillig" alt="Bli frivillig" title="Bli frivillig"   />
-</map>
+						<img style="position:absolute;left:460px;bottom:-5px;"http://nintendo.neuf.no/oyvinbak/studio11/wp-content/themes/studio11/img/bjornenmskilt.png  src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/bjornenmskilt.png" alt="STUDiO11" usemap="#blifrivillig" />
+						<map name="blifrivillig">  
+        <area shape="poly" coords="1,144,15,46,50,50,41,66,49,87,61,51,29,39,49,0,111,20,97,64,67,55,52,99,62,124,53,149,31,149," href="#blifrivillig" alt="Bli frivillig!" title="Bli frivillig!"   />
+    </map> 
 
 	<img style="position:absolute;left:550px;bottom:0px;" width="40"  src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/Grisen.png" alt="STUDiO11" />
 						</a>
