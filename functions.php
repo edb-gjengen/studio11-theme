@@ -54,7 +54,7 @@ class Artist_Widget extends WP_Widget {
       while ( $studart->have_posts() ) {
 	$studart->the_post();
 	$link = get_post_meta($post->ID, 'studio_artist_link', true) ? get_post_meta($post->ID, 'studio_artist_link', true) : get_permalink();
-	echo '<p style="font-size:'.get_post_meta($post->ID, 'studio_artist_font', true).'px"><a href="' . $link . '">' . get_the_title() . '</a></p>';
+	echo '<p class="'.get_post_meta($post->ID, 'studio_artist_font', true).'"><a href="' . $link . '">' . get_the_title() . '</a></p>';
       } 
     } echo $args['after_widget'];
   }
