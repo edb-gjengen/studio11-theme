@@ -71,6 +71,8 @@ class Artist_Widget extends WP_Widget {
 
 register_widget('Program_Widget'); 
 register_widget('Artist_Widget'); 
+add_filter('widget_text', 'do_shortcode');
+
 
 function get_related_artists( $post_id) 
 {

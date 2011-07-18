@@ -38,6 +38,10 @@
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/studio.css" />
 <script type="text/javascript" src="<?php bloginfo( 'stylesheet_directory' ); ?>/scripts/jquery.lightbox-0.5.pack.js"></script>
 
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/frontbox/fbox_conf.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/frontbox/fbox_engine-min.js"></script>
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/frontbox/fbox.css" type="text/css" />
+
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php
 	/* We add some JavaScript to pages with the comment form
