@@ -36,12 +36,61 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/studio.css" />
-<script type="text/javascript" src="<?php bloginfo( 'stylesheet_directory' ); ?>/scripts/jquery.lightbox-0.5.pack.js"></script>
+<?php /*<script type="text/javascript" src="<?php bloginfo( 'stylesheet_directory' ); ?>/scripts/jquery.lightbox-0.5.pack.js"></script>
+<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/frontbox/fbox_conf.js"></script>
+<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/frontbox/fbox_engine-min.js"></script>
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/frontbox/fbox.css" type="text/css" />
+*/
 
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/frontbox/fbox_conf.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/frontbox/fbox_engine-min.js"></script>
-<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/frontbox/fbox.css" type="text/css" />
+?>
+<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/scripts/jquery.js"></script>
+<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/scripts/jquery.simplemodal-1.4.1.js"></script>
+<?php
+if(is_front_page()): ?>
+<script type="text/javascript">
 
+var $j = jQuery.noConflict();
+
+$j(function()
+		{
+	$j("a").click(function(e)
+		{
+			var href = $j(this).attr('href')
+			$j.get(href, function(html)
+				{
+					var top = $j(window).scrollTop()  + "px !important";
+					$j.modal($j("#content", html).html(),
+							{
+								onOpen: function (dialog) {
+									dialog.overlay.fadeIn('fast', function () {
+										dialog.data.hide();
+										dialog.container.fadeIn('fast', function () {
+											dialog.data.slideDown('fast');
+										});
+									});
+							},
+								onClose: function (dialog) {
+										dialog.data.slideUp('fast', function () {
+												dialog.overlay.slideUp('fast', function () {
+													dialog.container.fadeOut('fast', function () {
+															$j.modal.close();
+													});
+												});
+										});
+									}
+							
+							});
+					$j("#simplemodal-container").css('top', top);
+					
+				});
+			e.preventDefault();
+			window.location = window.location.href.split("#")[0] + "#" + href;
+		});
+
+
+		});
+</script>
+<?php endif; ?>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php
 	/* We add some JavaScript to pages with the comment form

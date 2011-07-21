@@ -285,6 +285,45 @@ body {
 {
 	border:0px;
 }
+
+
+#simplemodal-overlay
+{
+	background:black;
+	opacity:0.7 !important;
+}
+
+#simplemodal-container
+{
+	width:600px;
+	height:auto !important;
+	background-color:white;
+	padding:20px;
+	position:absolute !important;
+	/*top:100px !important;*/
+	margin-top:100px;
+	margin-bottom:100px;
+	overflow:visible;
+	
+}	
+
+.simplemodal-wrap
+{
+	overflow:visible !important;
+}
+
+#simplemodal-container a.modalCloseImg {
+	background:url(/wp-content/themes/studio11/img/x.png) no-repeat; /* adjust url as required */
+	width:25px;
+	height:29px;
+	display:inline;
+	z-index:3200;
+	position:absolute;
+	top:-15px;
+	right:-18px;
+	cursor:pointer;
+}
+
 /*
 @media (max-width: 940px){
 	.menu-header 
