@@ -66,9 +66,9 @@ function showUrlModal(href)
 						});
 					},
 					onClose: function (dialog) {
-						window.location = window.location.origin + "#";
+						window.location = preModal;
 						dialog.data.slideUp('fast', function () {
-								dialog.overlay.slideUp('slow', function () {
+								dialog.overlay.slideUp('fast', function () {
 									dialog.container.fadeOut('fast', function () {
 											$j.modal.close();
 									});
@@ -82,8 +82,8 @@ function showUrlModal(href)
 
 }
 
-var preModal = window.location.href;
-if(preModal.indexOf("#") == -1) preModal += "#";
+var preModal = window.location.href + "#"
+if(preModal.indexOf("#") == -1) preModal = preModal.substr(0, preModal.indexOf("#"));
 
 $j(function()
 		{
