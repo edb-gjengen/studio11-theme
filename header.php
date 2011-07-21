@@ -50,41 +50,54 @@ if(is_front_page()): ?>
 <script type="text/javascript">
 
 var $j = jQuery.noConflict();
+function showUrlModal(href)
+{
+	$j.get(href, function(html)
+	{
+		var top = $j(window).scrollTop()  + "px !important";
+		$j.modal($j("#content", html).html(),
+				{
+					onOpen: function (dialog) {
+						dialog.overlay.fadeIn('fast', function () {
+							dialog.data.hide();
+							dialog.container.fadeIn('fast', function () {
+								dialog.data.slideDown('fast');
+							});
+						});
+					},
+					onClose: function (dialog) {
+						dialog.data.slideUp('fast', function () {
+								dialog.overlay.slideUp('fast', function () {
+									dialog.container.fadeOut('fast', function () {
+											$j.modal.close();
+									});
+								});
+						});
+					}
+				});
+		$j("#simplemodal-container").css('top', top);
+		
+	});
 
+}
 $j(function()
 		{
+		
+		tmp = window.location.href.split("#p=");
+
+		if(tmp.length > 1)
+		{
+
+			showUrlModal(window.location.origin + tmp[1]);
+		}
 	$j("a").click(function(e)
 		{
-			var href = $j(this).attr('href')
-			$j.get(href, function(html)
-				{
-					var top = $j(window).scrollTop()  + "px !important";
-					$j.modal($j("#content", html).html(),
-							{
-								onOpen: function (dialog) {
-									dialog.overlay.fadeIn('fast', function () {
-										dialog.data.hide();
-										dialog.container.fadeIn('fast', function () {
-											dialog.data.slideDown('fast');
-										});
-									});
-							},
-								onClose: function (dialog) {
-										dialog.data.slideUp('fast', function () {
-												dialog.overlay.slideUp('fast', function () {
-													dialog.container.fadeOut('fast', function () {
-															$j.modal.close();
-													});
-												});
-										});
-									}
-							
-							});
-					$j("#simplemodal-container").css('top', top);
-					
-				});
-			e.preventDefault();
-			window.location = window.location.href.split("#")[0] + "#" + href;
+			if(this.host == "<?php echo $_SERVER['HTTP_HOST'] ?>" && this.href != "<?php echo home_url() ?>/")
+			{
+				showUrlModal(this.href);
+				e.preventDefault();
+				window.location = window.location.href.split("#")[0] + "#p=" + href.substr(this.origin.length );
+			}
 		});
 
 
@@ -130,7 +143,7 @@ $j(function()
 						
 						<img style="position:absolute;left:460px;bottom:-5px;"http://nintendo.neuf.no/oyvinbak/studio11/wp-content/themes/studio11/img/bjornenmskilt.png  src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/bjornenmskilt.png" alt="STUDiO11" usemap="#blifrivillig" />
 						<map name="blifrivillig">  
-        <area shape="poly" coords="1,144,15,46,50,50,41,66,49,87,61,51,29,39,49,0,111,20,97,64,67,55,52,99,62,124,53,149,31,149," href="#blifrivillig" alt="Bli frivillig!" title="Bli frivillig!"   />
+        <area shape="poly" coords="1,144,15,46,50,50,41,66,49,87,61,51,29,39,49,0,111,20,97,64,67,55,52,99,62,124,53,149,31,149," href="/bli-med" alt="Bli frivillig!" title="Bli frivillig!"   />
     </map> 
 
 	<img style="position:absolute;left:550px;bottom:0px;" width="40"  src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/Grisen.png" alt="STUDiO11" />
