@@ -95,7 +95,7 @@ $j(function()
 			showUrlModal(window.location.origin + tmp[1]);
 		}
 	
-	var modal_match = Array(/^http:\/\/<?php echo preg_quote(home_url()) ?>\/.+/);
+	var modal_match = Array(/^<?php echo preg_quote(home_url(),'/') ?>\/.+/);
 	
 	var modal_not_match = Array(/wp-admin/);
 	
