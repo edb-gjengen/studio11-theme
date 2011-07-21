@@ -43,9 +43,8 @@ if ($events->have_posts()) : while ($events->have_posts()) : $events->the_post()
 <div class="post" id="post-<?php the_ID(); ?>">
   
 <h2>
-<a href="#"><span class="frontbox" src="#hidpos-<?php the_ID(); ?>" height="420" title="<?php the_title(); ?>"></span><?php the_title(); ?></a><a href="<?php the_permalink(); ?>" rel="bookmark" ></a>
-<a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-  <p class="meta">Posted on <?php the_time('F jS, Y'); ?></p>
+<a href="#"><span class="frontbox" src="#hidpos-<?php the_ID(); ?>" height="420" title="<?php the_title(); ?>"></span><?php the_title(); ?></a></h2>
+<p class="meta">Posted on <?php the_time('F jS, Y'); ?></p>
 <div id="hidpos-<?php the_ID(); ?>" style="display:none"><?php the_content(); ?></div>
   
   <p><?php the_tags('Tags: ', ', ', '<br />'); ?> Posted in <?php the_category(', '); ?> | <?php edit_post_link('Edit', '', ' | '); ?> <?php comments_popup_link('No Comments &#187;', '1 Com &#187;', '% Comments &#187;'); ?></p>
