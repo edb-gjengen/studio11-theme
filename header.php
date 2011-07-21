@@ -94,7 +94,8 @@ $j(function()
 		{
 			showUrlModal(window.location.origin + tmp[1]);
 		}
-	var modal_match = Array(/^http:\/\/<?php echo $_SERVER['HTTP_HOST'] ?>\/.+/);
+	
+	var modal_match = Array(/^http:\/\/<?php echo home_url() ?>\/.+/);
 	
 	var modal_not_match = Array(/wp-admin/);
 	
