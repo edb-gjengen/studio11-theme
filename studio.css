@@ -192,13 +192,29 @@ body {
 	width:200px !important;
 }
 
+#right-menu div.menu
+{
+	
+	width:auto !important;
+}
+
+#right-menu div.menu li
+{
+	float:none !important;
+	clear:both;
+}
+
 #right-menu a
 {
 	color:gray;
 	font-weight:bolder;
 	font-size:150%;
 	text-decoration:none;
+
 }
+
+
+
 #fb-all
 {
 	padding:5px;

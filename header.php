@@ -46,7 +46,7 @@
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/scripts/jquery.js"></script>
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/scripts/jquery.simplemodal-1.4.1.js"></script>
 <?php
-if(is_front_page()): ?>
+if(1 || is_front_page()): ?>
 <script type="text/javascript">
 
 var $j = jQuery.noConflict();
@@ -66,8 +66,9 @@ function showUrlModal(href)
 						});
 					},
 					onClose: function (dialog) {
+						window.location = window.location.origin + "#";
 						dialog.data.slideUp('fast', function () {
-								dialog.overlay.slideUp('fast', function () {
+								dialog.overlay.slideUp('slow', function () {
 									dialog.container.fadeOut('fast', function () {
 											$j.modal.close();
 									});
@@ -80,28 +81,45 @@ function showUrlModal(href)
 	});
 
 }
+
+var preModal = window.location.href;
+if(preModal.indexOf("#") == -1) preModal += "#";
+
 $j(function()
 		{
 		
-		tmp = window.location.href.split("#p=");
+		tmp = window.location.href.match(/#(\/.+)/);
 
-		if(tmp.length > 1)
+		if(tmp != null)
 		{
-
 			showUrlModal(window.location.origin + tmp[1]);
 		}
-	$j("a").click(function(e)
-		{
-			if(this.host == "<?php echo $_SERVER['HTTP_HOST'] ?>" && this.href != "<?php echo home_url() ?>/")
-			{
-				showUrlModal(this.href);
-				e.preventDefault();
-				window.location = window.location.href.split("#")[0] + "#p=" + href.substr(this.origin.length );
-			}
-		});
-
-
-		});
+	var modal_match = Array(/^http:\/\/<?php echo $_SERVER['HTTP_HOST'] ?>\/.+/);
+	
+	var modal_not_match = Array(/wp-admin/);
+	
+$j("[href]").click(function(e)
+	{
+		for(var i = 0; i < modal_match.length; i++)
+			if(this.href.match(modal_match[i]))
+				break;
+		if(i == modal_match.length)	return;
+		
+		for(var i = 0; i < modal_not_match.length; i++)
+			if(this.href.match(modal_not_match[i]))
+				return;
+		
+		showUrlModal(this.href);
+		e.preventDefault();
+		host_length = this.href.indexOf("/", 8) + 1;
+		if(host_length == 0) host_length = this.href.length;
+		window.location = window.location.href.split("#")[0] + "#/" + this.href.substr(host_length);
+	});
+	$j("#simplemodal-overlay").live('click', function(){
+		$j.modal.close();
+	
+	});
+});
 </script>
 <?php endif; ?>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
