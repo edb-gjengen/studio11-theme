@@ -25,14 +25,6 @@ if ($news->have_posts()) : while ($news->have_posts()) : $news->the_post(); ?>
 <h2>No Posts Found</h2>
 <?php endif;  ?>
 
-
-<?php
-
-$tmp = wp_get_nav_menu_items('3');
-echo '<pre>';
-var_dump($tmp);
-echo '</pre>';
-?>
 <hr />
 
 <h1>Program</h1>
@@ -50,8 +42,7 @@ if ($events->have_posts()) : while ($events->have_posts()) : $events->the_post()
 
 <div class="post" id="post-<?php the_ID(); ?>">
   
-<h2>
-<a href="<?php the_permalink(); ?>"><span class="frontbox" src="#hidpos-<?php the_ID(); ?>" height="420" title="<?php the_title(); ?>"></span><?php the_title(); ?></a></h2>
+<h2><a href="<?php the_permalink(); ?>"><span class="frontbox" src="#hidpos-<?php the_ID(); ?>" height="420" title="<?php the_title(); ?>"></span><?php the_title(); ?></a></h2>
 <p class="meta">Posted on <?php the_time('F jS, Y'); ?></p>
 <div id="hidpos-<?php the_ID(); ?>" style="display:none"><?php the_content(); ?></div>
   
