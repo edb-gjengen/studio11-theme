@@ -172,3 +172,13 @@ function thumbnail_in_header($title)
 }
 
 add_filter('the_title', 'thumbnail_in_header');*/
+
+function menu_links($items, $args)
+{
+	foreach($items as &$item)
+		if(in_array($item->object, array('page','post','category')))
+			$item->url = home_url() . '/#' . strtolower(preg_replace('#[^\w]+#','',$item->title));
+	return $items;
+}
+
+add_filter('wp_nav_menu_objects', 'menu_links');
