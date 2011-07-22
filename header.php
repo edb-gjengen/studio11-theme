@@ -112,9 +112,8 @@ $j("[href]").click(function(e)
 		
 		showUrlModal(this.href);
 		e.preventDefault();
-		host_length = this.href.indexOf("/", 8) + 1;
-		if(host_length == 0) host_length = this.href.length;
-		window.location = window.location.href.split("#")[0] + "#/" + this.href.substr(host_length);
+		var href = this.href.substr(<?php echo strlen(home_url()) ?>);
+		window.location = window.location.href.split("#")[0] + "#" + href;
 	});
 	$j("#simplemodal-overlay").live('click', function(){
 		$j.modal.close();
