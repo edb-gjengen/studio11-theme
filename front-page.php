@@ -64,6 +64,7 @@ foreach($items as $item)
 
 ?>
 <script type="text/javascript">
+
 $j(function()
 {
 	var $ = $j;
@@ -76,10 +77,7 @@ $j(function()
 		
 			items = $j(id);
 		
-			var from = $j("body").scrollTop();
-			if(!from) from = $j("html").scrollTop();
-			window.location = this.href;
-			$j("body,html").scrollTop(from);
+			setLocationWithoutScrolling(this.href);
 		
 			var targetOffset = items.offset().top - 30;
 			$j("html,body").animate({scrollTop:targetOffset}, 500);

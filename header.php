@@ -66,7 +66,7 @@ function showUrlModal(href)
 						});
 					},
 					onClose: function (dialog) {
-						window.location = preModal;
+						setLocationWithoutScrolling(preModal);
 						dialog.data.slideUp('fast', function () {
 								dialog.overlay.slideUp('fast', function () {
 									dialog.container.fadeOut('fast', function () {
@@ -80,6 +80,14 @@ function showUrlModal(href)
 		
 	});
 
+}
+
+function setLocationWithoutScrolling(location)
+{
+	var from = $j("body").scrollTop();
+	if(!from) from = $j("html").scrollTop();
+	window.location = location;
+	$j("body,html").scrollTop(from);
 }
 
 var preModal = window.location.href + "#"
@@ -99,8 +107,9 @@ $j(function()
 	
 	var modal_not_match = Array(/wp-admin/);
 	
-$j("[href]").click(function(e)
+$j(".content .post [href],#header [href]").live('click',function(e)
 	{
+		preModal = window.location.href;
 		for(var i = 0; i < modal_match.length; i++)
 			if(this.href.match(modal_match[i]))
 				break;
