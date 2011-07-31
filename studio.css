@@ -1,38 +1,45 @@
-.liten {
-	font-size: 20px;
+#countdown {
+	font-size: 15px;
+	color: grey;
+
 }
 
-.normalliten{
-	font-size: 20px;
+.price {
+	padding-right: 5px !important;
 }
 
-.normalstor {
-	font-size: 25px;
+.time {
+	width: 20% !important;
 }
 
-.stor {
-	font-size: 30px;
-}
 
-.mega {
-	font-size: 35px;
-}
-
-.first .loop-image img{
-	position: absolute;
-	clip: rect(0px,600px,250px,0px);
-}
-
-.first {
-	min-height: 400px;
-}
-
-/*
 .frontpage-loop .post {
 	float: left;
 	width: 50%;
+	min-height: 200px;
 }
-*/
+
+.frontpage-loop .post .loop-image img {
+	width: 250px;
+	height: 50px;
+}
+
+.first .loop-image img{
+	position: absolute !important;
+	clip: rect(0px,520px,200px,0px) !important;
+	width: auto !important;
+	height: auto !important;
+}
+
+.first {
+	min-height: 300px !important;
+	width: 100% !important;
+	float: left !important;
+}
+
+.first .entry-content {
+	padding-top: 200px;
+}
 
 #branding h1 {
 	border: none;
@@ -53,11 +60,11 @@ h1 {
 h3.widget-title {
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	border-bottom: #C32083 2px solid;
+	/*border-bottom: #C32083 2px solid;*/
 	color: #C32083;
 	text-align: center;
 	font-size: 3em;
-	padding-bottom: 15px; 
+	padding-bottom: 25px; 
 }
 
 h1.entry-title {
@@ -77,6 +84,7 @@ h1.entry-title {
 
 .event-table tr:hover {
 	background-color: #fefbf6;
+	cursor: pointer;
 }
 
 
@@ -96,6 +104,10 @@ h1.entry-title {
 body {
 	color: #666 !important;
 	background-color: #FCF9F0 !important;
+	background-image: url(/wp-content/themes/studio11/img/studioweb.png) !important;
+	background-position: 0px 450px !important; 
+	background-repeat: no-repeat !important;
+	background-size: 15%; !important;
 }
 
 .content {
@@ -139,7 +151,7 @@ a:visited {
 .entry-meta {
 	color: #bbbbbb;
 	font-size: 0.8em;
-	line-height: 8px;
+	line-height: 12px;
 }
 
 .entry-meta a, .entry-utility a, .entry-meta a:hover, meta-prep  {
@@ -362,6 +374,7 @@ body {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	line-height: 20px;
+	padding-top: 0px;
 }
 
 .current-menu-item a
@@ -426,8 +439,12 @@ body {
 {
 	width: auto;
 	padding: 5px;
-	background-color: #FEF4E2;
+	/*background-color: #FEF4E2; */
 	color: #666 !important;
+}
+
+.connect_widget_interactive_area {
+	width: 20px;
 }
 
 .entry-content {	
@@ -577,3 +594,23 @@ body {
 		margin: auto !important;
 	}
 }*/
+
+.liten {
+	font-size: 20px;
+}
+
+.normalliten{
+	font-size: 20px;
+}
+
+.normalstor {
+	font-size: 25px;
+}
+
+.stor {
+	font-size: 30px;
+}
+
+.mega {
+	font-size: 35px;
+}
