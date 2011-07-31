@@ -55,7 +55,9 @@ function showUrlModal(href)
 	$j.get(href, function(html)
 	{
 		var top = $j(window).scrollTop()  + "px !important";
-		$j.modal($j("#content", html).html(),
+		var tmp = $j(html);
+		
+		$j.modal(tmp.find("#content"),
 				{
 					onOpen: function (dialog) {
 						dialog.overlay.fadeIn('fast', function () {
@@ -165,12 +167,12 @@ $j(".content .post [href],#header [href]").live('click',function(e)
 						<img style="position:absolute;left:400px;bottom:0px;" width="50"  src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/Pingvinen.png" alt="STUDiO11" />
 						<img style="position:absolute;left:150px;bottom:0px;" width="50"  src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/Ugla.png" alt="STUDiO11" />
 						<img style="position:absolute;left:0px;bottom:0px;" width="75"  src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/Kua.png" alt="STUDiO11" />
-					
-						<div id="countdown" style="position:absolute;top:10px;left:400px;color:#C32083;">Bare <?php echo ceil((strtotime('2011-08-15') - time()) / 60 / 60 / 24) ?> dager igjen!</div>
 						
+<div id="countdown" style="font-size: 0.5em; position:absolute;top:10px;left:250px;color:#808184;"> Studentfestivalen i Oslo - Bare <?php echo ceil((strtotime('2011-08-15') - time()) / 60 / 60 / 24) ?> dager igjen!</div>
+
 						<img style="position:absolute;left:460px;bottom:-5px;"http://nintendo.neuf.no/oyvinbak/studio11/wp-content/themes/studio11/img/bjornenmskilt.png  src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/bjornenmskilt.png" alt="STUDiO11" usemap="#blifrivillig" />
 						<map name="blifrivillig">  
-        <area shape="poly" coords="1,144,15,46,50,50,41,66,49,87,61,51,29,39,49,0,111,20,97,64,67,55,52,99,62,124,53,149,31,149," href="/bli-med" alt="Bli frivillig!" title="Bli frivillig!"   />
+        <area shape="poly" coords="1,144,15,46,50,50,41,66,49,87,61,51,29,39,49,0,111,20,97,64,67,55,52,99,62,124,53,149,31,149," href="http://edb.neuf.no/frivillig/" alt="Bli frivillig!" title="Bli frivillig!"   />
     </map> 
 
 	<img style="position:absolute;left:550px;bottom:0px;" width="40"  src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/Grisen.png" alt="STUDiO11" />

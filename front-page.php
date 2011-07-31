@@ -11,7 +11,7 @@ get_header(); ?>
 		.content
 		{
 			margin-bottom:50px;
-			background-color:#12b259;
+			background-color:#f1ede7;
 			background-color:rgba(18,178,89,0.8);
 			padding:10px;
 		}
@@ -20,7 +20,7 @@ get_header(); ?>
 		<div id="container">
 			<div id="content" role="main">
 <?php
-$items =  wp_get_nav_menu_items('5');
+$items =  wp_get_nav_menu_items('3');
 
 foreach($items as $item)
 {

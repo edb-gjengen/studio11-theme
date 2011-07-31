@@ -116,7 +116,7 @@ input,
 textarea,
 .page-title span,
 .pingback a.url {
-	font-family: Georgia, "Bitstream Charter", serif;
+	font-family: Futura, Georgia, "Bitstream Charter", serif;
 }
 h3#comments-title,
 h3#reply-title,
@@ -143,7 +143,7 @@ h3#reply-title,
 .reply,
 .widget-title,
 .wp-caption-text {
-	font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+	font-family: Futura, "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
 }
 input[type=submit] {
 	font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
@@ -347,7 +347,7 @@ a:hover {
 	width: 700px;
 }
 #site-title a {
-	color: #000;
+	color: #333333;
 	font-weight: bold;
 	text-decoration: none;
 }
@@ -494,7 +494,7 @@ div.menu li {
 }
 #content dt,
 #content th {
-	color: #000;
+	color: #333333;
 }
 #content h1,
 #content h2,
@@ -502,7 +502,7 @@ div.menu li {
 #content h4,
 #content h5,
 #content h6 {
-	color: #000;
+	color: #333333;
 	line-height: 1.5em;
 	margin: 0 0 20px 0;
 }
@@ -542,7 +542,7 @@ div.menu li {
 	margin: 0 0 36px 0;
 }
 .page-title {
-	color: #000;
+	color: #333333;
 	font-size: 14px;
 	font-weight: bold;
 	margin: 0 0 36px 0;
@@ -563,15 +563,14 @@ div.menu li {
 	color: #ff4b33;
 }
 #content .entry-title {
-	color: #000;
+	color: #333333;
 	font-size: 21px;
-	font-weight: bold;
 	line-height: 1.3em;
 	margin-bottom: 0;
 }
 .entry-title a:link,
 .entry-title a:visited {
-	color: #000;
+	color: #333333;
 	text-decoration: none;
 }
 .entry-title a:active,
@@ -579,7 +578,7 @@ div.menu li {
 	color: #ff4b33;
 }
 .entry-meta {
-	color: black;
+	color: #333333;
 	font-size: 12px;
 }
 .entry-meta abbr,
