@@ -64,7 +64,8 @@ function showUrlModal(href)
 								dialog.data.slideDown('fast');
 							});
 						});
-						FB.XFBML.parse();
+						if(FB)
+							FB.XFBML.parse();
 
 					},
 					onClose: function (dialog) {
