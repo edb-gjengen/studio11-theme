@@ -181,7 +181,7 @@ $j(".content .post,#header [href]").live('click',function(e)
 					
 						<div id="countdown" style="position:absolute;top:10px;left:400px;color:#C32083;">Bare <?php echo ceil((strtotime('2011-08-15') - time()) / 60 / 60 / 24) ?> dager igjen!</div>
 						
-						<img style="position:absolute;left:460px;bottom:-5px;"http://nintendo.neuf.no/oyvinbak/studio11/wp-content/themes/studio11/img/bjornenmskilt.png  src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/bjornenmskilt.png" alt="STUDiO11" usemap="#blifrivillig" />
+						<img style="position:absolute;left:460px;bottom:-5px;" src="<?php echo get_bloginfo('stylesheet_directory') ?>/img/bjornenmskilt.png" alt="STUDiO11" usemap="#blifrivillig" />
 						<map name="blifrivillig">  
         <area shape="poly" coords="1,144,15,46,50,50,41,66,49,87,61,51,29,39,49,0,111,20,97,64,67,55,52,99,62,124,53,149,31,149," href="/bli-med" alt="Bli frivillig!" title="Bli frivillig!"   />
     </map> 
