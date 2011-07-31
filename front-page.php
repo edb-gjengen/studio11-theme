@@ -27,9 +27,10 @@ if($menu_id)
 }
 else
 {
-	echo "No frontpage menu configured";
+	echo '<a href="' . admin_url('admin.php?page=studio_lol_settings') . '">No frontpage menu configured</a>';
 	$items = array();
 }
+
 foreach($items as $item)
 {
 	wp_reset_postdata();
@@ -61,8 +62,11 @@ foreach($items as $item)
 	if($query)
 	{
 		$id = strtolower(preg_replace('#[^\w]+#', '', $item->title));
+		
 		echo "<div class=\"content\"  id=\"{$id}\">";
+		
 		if($pre) echo $pre;
+		
 		query_posts($query);
 		get_template_part( 'loop', $loop);
 		

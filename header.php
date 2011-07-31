@@ -68,6 +68,7 @@ function showUrlModal(href)
 
 					},
 					onClose: function (dialog) {
+					
 						setLocationWithoutScrolling(preModal);
 						dialog.data.slideUp('fast', function () {
 								dialog.overlay.slideUp('fast', function () {
@@ -88,6 +89,9 @@ function setLocationWithoutScrolling(location)
 {
 	var from = $j("body").scrollTop();
 	if(!from) from = $j("html").scrollTop();
+	
+	if(location.indexOf("#") == -1) location += "#";
+
 	window.location = location;
 	$j("body,html").scrollTop(from);
 }
@@ -109,21 +113,28 @@ $j(function()
 	
 	var modal_not_match = Array(/wp-admin/);
 	
-$j(".content .post [href],#header [href]").live('click',function(e)
+$j(".content .post,#header [href]").live('click',function(e)
 	{
 		preModal = window.location.href;
+				e.preventDefault();
+				
+		if($j(this).attr('href'))
+			href = this.href;
+		else
+			href = $j(this).find("[href]").attr('href');
+		
 		for(var i = 0; i < modal_match.length; i++)
-			if(this.href.match(modal_match[i]))
+			if(href.match(modal_match[i]))
 				break;
 		if(i == modal_match.length)	return;
 		
 		for(var i = 0; i < modal_not_match.length; i++)
-			if(this.href.match(modal_not_match[i]))
+			if(href.match(modal_not_match[i]))
 				return;
 		
-		showUrlModal(this.href);
-		e.preventDefault();
-		var href = this.href.substr(<?php echo strlen(home_url()) ?>);
+		showUrlModal(href);
+
+		href = href.substr(<?php echo strlen(home_url()) ?>);
 		window.location = window.location.href.split("#")[0] + "#" + href;
 	});
 	$j("#simplemodal-overlay").live('click', function(){
