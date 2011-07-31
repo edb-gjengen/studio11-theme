@@ -109,20 +109,27 @@ $j(function()
 	
 	var modal_not_match = Array(/wp-admin/);
 	
-$j(".content .post [href],#header [href]").live('click',function(e)
+$j(".content .post,#header [href]").live('click',function(e)
 	{
 		preModal = window.location.href;
+				e.preventDefault();
+				
+		if($j(this).attr('href'))
+			href = this.href;
+		else
+			href = $j(this).find("[href]").attr('href');
+		
 		for(var i = 0; i < modal_match.length; i++)
-			if(this.href.match(modal_match[i]))
+			if(href.match(modal_match[i]))
 				break;
 		if(i == modal_match.length)	return;
 		
 		for(var i = 0; i < modal_not_match.length; i++)
-			if(this.href.match(modal_not_match[i]))
+			if(href.match(modal_not_match[i]))
 				return;
 		
-		showUrlModal(this.href);
-		e.preventDefault();
+		showUrlModal(href);
+
 		var href = this.href.substr(<?php echo strlen(home_url()) ?>);
 		window.location = window.location.href.split("#")[0] + "#" + href;
 	});

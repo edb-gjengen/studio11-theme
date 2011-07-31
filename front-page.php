@@ -61,8 +61,11 @@ foreach($items as $item)
 	if($query)
 	{
 		$id = strtolower(preg_replace('#[^\w]+#', '', $item->title));
+		
 		echo "<div class=\"content\"  id=\"{$id}\">";
+		
 		if($pre) echo $pre;
+		
 		query_posts($query);
 		get_template_part( 'loop', $loop);
 		
