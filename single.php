@@ -10,7 +10,7 @@ get_header(); ?>
 
 		<div id="container">
 			<div id="content" role="main">
-<?php echo get_the_post_thumbnail( $post->ID, array(550,500) ); ?>
+
 			<?php
 			/* Run the loop to output the post.
 			 * If you want to overload this in a child theme then include a file
@@ -19,6 +19,8 @@ get_header(); ?>
 			 
 			get_template_part( 'loop', 'single' );
 			?>
+
+			
 
 			</div><!-- #content -->
 		</div><!-- #container -->
