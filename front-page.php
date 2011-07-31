@@ -19,8 +19,17 @@ get_header(); ?>
 		<div id="container">
 			<div id="content" role="main">
 <?php
-$items =  wp_get_nav_menu_items('3');
 
+$menu_id = get_option('front_menu_id');
+if($menu_id)
+{
+	$items =  wp_get_nav_menu_items($menu_id);
+}
+else
+{
+	echo "No frontpage menu configured";
+	$items = array();
+}
 foreach($items as $item)
 {
 	wp_reset_postdata();
