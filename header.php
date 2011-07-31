@@ -68,6 +68,7 @@ function showUrlModal(href)
 
 					},
 					onClose: function (dialog) {
+					
 						setLocationWithoutScrolling(preModal);
 						dialog.data.slideUp('fast', function () {
 								dialog.overlay.slideUp('fast', function () {
@@ -88,6 +89,9 @@ function setLocationWithoutScrolling(location)
 {
 	var from = $j("body").scrollTop();
 	if(!from) from = $j("html").scrollTop();
+	
+	if(location.indexOf("#") == -1) location += "#";
+
 	window.location = location;
 	$j("body,html").scrollTop(from);
 }
@@ -130,7 +134,7 @@ $j(".content .post,#header [href]").live('click',function(e)
 		
 		showUrlModal(href);
 
-		var href = this.href.substr(<?php echo strlen(home_url()) ?>);
+		href = href.substr(<?php echo strlen(home_url()) ?>);
 		window.location = window.location.href.split("#")[0] + "#" + href;
 	});
 	$j("#simplemodal-overlay").live('click', function(){
