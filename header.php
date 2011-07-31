@@ -145,7 +145,44 @@ $j(".content .post,#header [href],.event-table tr,.widget_artist_widget p").live
 		$j.modal.close();
 	
 	});
+	
+	$j(".content .navigation a").live('click', function(e)
+	{	
+		e.preventDefault();
+		p = this.parentNode;
+		while(p != null && (!p.className || p.className.indexOf("content") == -1))
+			p = p.parentNode;
+		/*
+		durl = $("a[href^=\"<?php echo home_url()?>/category/\"]",p).attr('href');
+		durl += this.href.substr((window.location.origin + window.location.pathname).length);
+		*/
+		/*
+		$.get(this.href, function(html){
+			nev = '<div class="scroller" style="float:left;">' + $("#" + p.id, html).html() + '</div>';
+			
+			first = $('' + $(p).html() + '</div>')
+			$(p).html(first);
+			
+			if(this.parentNode.className == 'nav-previous')
+				
+			
+			first.css('position','absolute');
+			first.animate({left:800},500);
+			
+			
+		});
+		*/
+		
+		
+		
+		$j.get(this.href, function(html){
+			$j(p).html($j("#" + p.id, html).html());
+		});
+		
+	});
 });
+var p;
+
 </script>
 <?php endif; ?>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
