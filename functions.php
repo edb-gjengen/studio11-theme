@@ -64,12 +64,12 @@ class Artist_Widget extends WP_Widget {
 	$studart->the_post();
 
     // event-lenka
-	$event = get_post_meta($post->ID, 'studio_artist_event', true) != "";
+	$event = get_post_meta($post->ID, 'studio_artist_event', true);
     // ekstern lenke for artisten
     if (get_post_meta($post->ID, 'studio_artist_link', true))
         $link = ' <a href="'.get_post_meta($post->ID, 'studio_artist_link', true).'">ekst</a>';
     else $link = "";	
-    echo '<p style="font-size:'.get_post_meta($post->ID, 'studio_artist_font', true).'px"><a href="' . $event . '">' . get_the_title() . '</a>'.$link.'</p>';
+    echo '<p class="'.get_post_meta($post->ID, 'studio_artist_font', true).'"><a href="' . $event . '">' . get_the_title() . '</a>'.$link.'</p>';
 
       } 
     } echo $args['after_widget'];

@@ -1,3 +1,41 @@
+h1 {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.content {
+ padding: 40px;
+}
+
+.meta-sep{
+	display: none; 
+}
+
+.author {
+	display: none; 
+}
+
+.entry-utility {
+	display: none;
+}
+
+#footer #first
+{
+	width:100%;
+
+}
+
+#sponsors
+{
+	text-align:center;
+}
+
+#sponsors .sponsor
+{
+	display:inline;
+	margin:50px;
+}
+
 
 #left-primary
 {
@@ -19,7 +57,7 @@
 {
 	float:left;
 	margin-left:150px !important;
-	width: 640px;
+	width: 680px;
 	min-height:700px;
 }
 
@@ -74,16 +112,16 @@ body {
 	background: fixed url('/oyvinbak/studio11/wp-content/themes/studio11/img/bakgrunn.png') no-repeat;
 	width: auto;
 	height: auto;
-	font-family:courier;
+	font-family:Futura;
 }
 #main
 {
-	width:1020px;
+	width:1080px;
 }
 #wrapper
 {
 	background-color:transparent;
-	width:1020px;
+	width:1080px;
 	margin-top:0px;
 	padding-top:0px;
 }
@@ -110,7 +148,7 @@ body {
 
 #left-column, #right-column
 {
-	margin-top:60px;
+	margin-top:0px;
 }
 
 #left-column ul, #right-column ul
@@ -128,7 +166,7 @@ body {
 
 #left-column .widget-container, #right-column .widget-container
 {
-	padding:10px;
+
 }
 
 #left-column .widget_text
@@ -136,6 +174,7 @@ body {
 	padding:0px;
 	/*margin:-10px;
 	margin-bottom:60px;*/
+
 }
 
 
@@ -177,19 +216,36 @@ body {
 	position:fixed;
 	background-color:#fba61c;
 	background-color:rgba(251,166,28,0.9);
-	padding:5px;
+	text-transform: uppercase;
+	line-height: 20px;
 }
 
 .current-menu-item a
 {
-	
 	color:white;
 }
 
+
+.menu-item {
+	padding-left: 10px;
+}
+
+.x{
+	display: block;
+}
+
+
+.menu-item:hover {
+	background-color: #333;
+	color:rgba(251,166,28,0.9); 
+}
+
+
+
 #right-menu
 {
-	text-align:center;
-	width:200px !important;
+	text-align:left;
+	width:210px !important;
 }
 
 #right-menu div.menu
@@ -213,11 +269,15 @@ body {
 
 }
 
+.widget_artist_widget{
+	padding: 5px;
+}
 
 
 #fb-all
 {
-	padding:5px;
+	width: auto;
+	padding: 5px;
 	background-color:#bababa;
 }
 
@@ -225,12 +285,12 @@ body {
 {
 	float:left;
 	width:200px;
-	margin-left:20px;
+	margin-left:10px;
 }
 
 #container
 {
-	width: 550px;
+	width: 600px;
 	margin-left:220px !important;
 	background-color:#12b259;
 	background-color:rgba(18,178,89,0.8);
@@ -327,6 +387,11 @@ body {
 	cursor:pointer;
 }
 
+.category-nyhet {
+	line-height: 15px;
+}
+
+
 /*
 @media (max-width: 940px){
 	.menu-header 
@@ -351,7 +416,7 @@ body {
 	{
 		margin: auto !important;
 		
-		width:580px !important;
+		width:550px !important;
 	}
 	
 	#wrapper, #main
