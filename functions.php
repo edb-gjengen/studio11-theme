@@ -223,7 +223,7 @@ $menus = wp_get_nav_menus( );
 <select name="front_menu_id">
 
 <?php foreach($menus as $menu): ?>
-	<option value="<?php echo $menu->term_id ?>" <?php if($menu->term_id == get_option('front_menu_id')) echo ' selected="selected"'?> ><?php echo $menu->name ?></option>
+	<label for="front_menu_id">Hvilken meny skal fremsiden hentes fra?</label><option value="<?php echo $menu->term_id ?>" <?php if($menu->term_id == get_option('front_menu_id')) echo ' selected="selected"'?> ><?php echo $menu->name ?></option>
 <?php endforeach; ?>
 </select>
 <p class="submit">
