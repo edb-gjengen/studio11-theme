@@ -113,7 +113,7 @@ $j(function()
 	
 	var modal_not_match = Array(/wp-admin/);
 	
-$j(".content .post,#header [href]").live('click',function(e)
+$j(".content .post,#header [href],.event-table tr").live('click',function(e)
 	{
 		preModal = window.location.href;
 				e.preventDefault();
@@ -122,6 +122,9 @@ $j(".content .post,#header [href]").live('click',function(e)
 			href = this.href;
 		else
 			href = $j(this).find("[href]").attr('href');
+		
+		if(!href)
+			return;
 		
 		for(var i = 0; i < modal_match.length; i++)
 			if(href.match(modal_match[i]))
