@@ -30,6 +30,14 @@
 					</div><!-- .entry-meta -->
 
 					<div class="entry-content">
+
+						<?php if ($post->post_type == "event"){
+							echo '<p class="tid">'.date("H:i d/m", get_post_meta( $post->ID, 'neuf_events_starttime',  true)).'</p>';
+							echo '<p class="venue">'.get_post_meta( $post->ID, 'neuf_events_venue',  true ).'</p>';
+							echo '<p class="type">'.get_post_meta( $post->ID, 'neuf_events_type',  true ).'</p>';
+							echo '<p class="price">'.get_post_meta( $post->ID, 'neuf_events_price',  true ).'</p>';
+						} ?>
+
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'twentyten' ), 'after' => '</div>' ) ); ?>
 					</div><!-- .entry-content -->
