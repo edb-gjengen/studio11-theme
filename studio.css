@@ -4,8 +4,19 @@ h1 {
 }
 
 .content {
- padding: 40px;
+	padding: 40px;
+	background-color: #FEF4E2 !important;
 }
+
+#content {
+	background-color: #FEF4E2 !important;
+}
+
+#simplemodal-container {
+	background-color: #FEF4E2 !important;
+}
+
+
 
 .meta-sep{
 	display: none; 
@@ -214,8 +225,8 @@ body {
 #right-menu
 {
 	position:fixed;
-	background-color:#fba61c;
-	background-color:rgba(251,166,28,0.9);
+	/*background-color:#fba61c;
+	background-color:rgba(251,166,28,0.9);*/
 	text-transform: uppercase;
 	line-height: 20px;
 }
@@ -236,8 +247,11 @@ body {
 
 
 .menu-item:hover {
-	background-color: #333;
-	color:rgba(251,166,28,0.9); 
+	/*background-color: #333;*/
+	/*color:rgba(251,166,28,0.9);*/
+	background-color:rgba(251,182,89,0.9);
+
+ 
 }
 
 
