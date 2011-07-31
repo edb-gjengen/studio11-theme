@@ -64,6 +64,7 @@ function showUrlModal(href)
 								dialog.data.slideDown('fast');
 							});
 						});
+						FB.XFBML.parse();
 					},
 					onClose: function (dialog) {
 						setLocationWithoutScrolling(preModal);

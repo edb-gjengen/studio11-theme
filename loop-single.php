@@ -52,11 +52,12 @@
 <?php endif; ?>
 
 					<div class="entry-utility">
-						<?php twentyten_posted_in(); ?>
+						<?php //twentyten_posted_in(); ?>
 						<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="edit-link">', '</span>' ); ?>
 					</div><!-- .entry-utility -->
 					
-					<fb:comments href="<?php the_permalink() ?>" num_posts="2" width="500"></fb:comments>
+					<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:comments href="<?php the_permalink() ?>" num_posts="2" width="500"></fb:comments>
+
 				</div><!-- #post-## -->
 
 			<?php /*	<div id="nav-below" class="navigation">
