@@ -12,7 +12,6 @@ get_header(); ?>
 		{
 			margin-bottom:50px;
 			background-color:#f1ede7;
-			background-color:rgba(18,178,89,0.8);
 			padding:10px;
 		}
 		
