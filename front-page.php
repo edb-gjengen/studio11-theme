@@ -63,7 +63,7 @@ foreach($items as $item)
 	{
 		$id = strtolower(preg_replace('#[^\w]+#', '', $item->title));
 		
-		echo "<div class=\"content\"  id=\"{$id}\">";
+		echo "<div class=\"frontpage-loop content $loop\"  id=\"{$id}\">";
 		
 		if($pre) echo $pre;
 		
