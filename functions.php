@@ -173,7 +173,7 @@ function thumbnail_in_header($title)
 
 add_filter('the_title', 'thumbnail_in_header');*/
 
-function menu_links($items, $args)
+function menu_links($items, $args = null)
 {
 	foreach($items as &$item)
 		if(in_array($item->object, array('page','post','category')))
