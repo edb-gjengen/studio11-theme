@@ -114,7 +114,7 @@ $j(function()
 	
 	var modal_not_match = Array(/wp-admin/);
 	
-$j(".content .post,#header [href],.event-table tr").live('click',function(e)
+$j(".content .post,#header [href],.event-table tr,.widget_artist_widget p").live('click',function(e)
 	{
 		preModal = window.location.href;
 				e.preventDefault();
