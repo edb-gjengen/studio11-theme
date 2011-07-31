@@ -193,7 +193,7 @@ add_action('admin_menu', 'studio_create_menu');
 function studio_create_menu() {
 
 	//create new top-level menu
-	add_menu_page('Studio theme settings', 'Studio theme settings', 'administrator', __FILE__, 'studio_settings_page',plugins_url('/images/icon.png', __FILE__));
+	add_menu_page('Studio theme settings', 'Studio theme settings', 'administrator', 'studio_lol_settings', 'studio_settings_page',plugins_url('/images/icon.png', __FILE__));
 
 	//call register settings function
 	add_action( 'admin_init', 'register_studio_settings' );
@@ -231,4 +231,6 @@ $menus = wp_get_nav_menus( );
     </p>
 </form>
 </div>
-<?php } ?>
+<?php } 
+
+
