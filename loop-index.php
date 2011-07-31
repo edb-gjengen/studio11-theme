@@ -13,7 +13,7 @@ if ($news->have_posts()) : while ($news->have_posts()) : $news->the_post(); ?>
   
 <h2><a href="#"><span class="frontbox" src="#hidpos-<?php the_ID(); ?>" height="420" title="<?php the_title(); ?>"></span><?php the_title(); ?></a><a href="<?php the_permalink(); ?>" rel="bookmark" ></a></h2>
   <p class="meta">Posted on <?php the_time('F jS, Y'); ?></p>
-<div id="hidpos-<?php the_ID(); ?>" style="display:none"><a href="#"><span class="frontbox" src="#hidpos-<?php the_ID(); ?>" height="420" title="<?php the_title(); ?>"></span><?php the_content("lol", true); ?></a></div>
+<div id="hidpos-<?php the_ID(); ?>" style="display:none"><?php the_content(); ?></div>
   
   <p><?php the_tags('Tags: ', ', ', '<br />'); ?> Posted in <?php the_category(', '); ?> | <?php edit_post_link('Edit', '', ' | '); ?> <?php comments_popup_link('No Comments &#187;', '1 Com &#187;', '% Comments &#187;'); ?></p>
 </div>
