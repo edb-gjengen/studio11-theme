@@ -182,3 +182,53 @@ function menu_links($items, $args)
 }
 
 add_filter('wp_nav_menu_objects', 'menu_links');
+
+
+
+// create custom plugin settings menu
+add_action('admin_menu', 'studio_create_menu');
+
+
+
+function studio_create_menu() {
+
+	//create new top-level menu
+	add_menu_page('Studio theme settings', 'Studio theme settings', 'administrator', __FILE__, 'studio_settings_page',plugins_url('/images/icon.png', __FILE__));
+
+	//call register settings function
+	add_action( 'admin_init', 'register_studio_settings' );
+}
+
+
+function register_studio_settings() {
+	//register our settings
+	register_setting( 'studio-settings', 'front_menu_id' );
+}
+
+function studio_settings_page() {
+?>
+<div class="wrap">
+<h2>Studio theme</h2>
+
+<form method="post" action="options.php">
+    <?php 
+    settings_fields( 'studio-settings' ); ?>
+    <?php //do_settings( 'baw-settings-group' ); ?>
+   
+   <?php
+   
+$menus = wp_get_nav_menus( );
+   
+   ?>
+<select name="front_menu_id">
+
+<?php foreach($menus as $menu): ?>
+	<option value="<?php echo $menu->term_id ?>" <?php if($menu->term_id == get_option('front_menu_id')) echo ' selected="selected"'?> ><?php echo $menu->name ?></option>
+<?php endforeach; ?>
+</select>
+<p class="submit">
+    <input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
+    </p>
+</form>
+</div>
+<?php } ?>
